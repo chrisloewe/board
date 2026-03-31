@@ -20,7 +20,7 @@ public class MigrationStrategy {
     private final Connection connection;
 
     public void executeMigration(){
-        var originalOut = System.out;
+        var originalOutt = System.out;
         var originalErr = System.err;
         try(var fos = new FileOutputStream("liquibase.log")){
             System.setOut(new PrintStream(fos));
@@ -41,7 +41,7 @@ public class MigrationStrategy {
         } catch (IOException ex){
             ex.printStackTrace();
         } finally {
-            System.setOut(originalOut);
+            System.setOut(originalOutt);
             System.setErr(originalErr);
         }
     }
